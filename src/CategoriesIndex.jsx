@@ -3,12 +3,10 @@ export function CategoriesIndex(props) {
   return (
     <div>
       <h1>All Categories</h1>
-      {props.photos.map((photo) => (
-        <div key={photo.id}>
-          <h2>{photo.name}</h2>
-          <img src={photo.url} />
-          <p>Width: {photo.width}</p>
-          <p>Height: {photo.height}</p>
+      {props.categories.map((category) => (
+        <div key={category.id}>
+          <h2>{category.name}</h2>
+          <p>Recommended Percent: {category.recommended_percent}</p>
         </div>
       ))}
     </div>
