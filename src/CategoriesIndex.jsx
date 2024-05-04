@@ -7,7 +7,9 @@ export function CategoriesIndex(props) {
         <div key={category.id}>
           <h2>{category.name}</h2>
           <p>Recommended Percent: {category.recommended_percent}</p>
-          <button onClick={() => props.onShowCategory(category)}>More Info</button>
+          <button className="btn btn-info mb-3" onClick={() => props.onShowCategory(category)}>
+            More Info
+          </button>
         </div>
       ))}
     </div>

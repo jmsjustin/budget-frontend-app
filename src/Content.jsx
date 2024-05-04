@@ -6,12 +6,34 @@ import { LogoutLink } from "./LogoutLink";
 import { CategoriesIndex } from "./CategoriesIndex";
 import { CategoriesNew } from "./CategoriesNew";
 import { CategoriesShow } from "./CategoriesShow";
+import { ExpensesIndex } from "./ExpensesIndex";
+import { ExpensesNew } from "./ExpensesNew";
 import { Modal } from "./Modal";
 
 export function Content() {
   const [categories, setCategories] = useState([]);
   const [isCategoriesShowVisible, setIsCategoriesShowVisible] = useState(false);
   const [currentCategory, setCurrentCategory] = useState({});
+
+  const [expenses, setExpenses] = useState([]);
+
+  const handleIndexExpenses = () => {
+    console.log("handleIndexExpenses");
+    axios.get("http://localhost:3000/expenses.json").then((response) => {
+      console.log(response.data);
+      setExpenses(response.data);
+    });
+  };
+
+  const handleCreateExpense = (params, successCallback) => {
+    console.log("handleCreateExpense", params);
+    axios.post("http://localhost:3000/expenses.json", params).then((response) => {
+      setExpenses([...expenses, response.data]);
+      successCallback();
+    });
+  };
+
+  useEffect(handleIndexExpenses, []);
 
   const handleIndexCategories = () => {
     console.log("handleIndexCategories");
@@ -43,12 +65,14 @@ export function Content() {
   useEffect(handleIndexCategories, []);
 
   return (
-    <div>
+    <div className="container">
       <Signup />
       <Login />
       <LogoutLink />
       <CategoriesNew onCreateCategory={handleCreateCategory} />
       <CategoriesIndex categories={categories} onShowCategory={handleShowCategory} />
+      <ExpensesNew onCreateExpense={handleCreateExpense} />
+      <ExpensesIndex expenses={expenses} />
       <Modal show={isCategoriesShowVisible} onClose={handleClose}>
         <CategoriesShow category={currentCategory} />
       </Modal>
