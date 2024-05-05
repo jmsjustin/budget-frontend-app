@@ -6,7 +6,7 @@ import { LogoutLink } from "./LogoutLink";
 import { CategoriesIndex } from "./CategoriesIndex";
 import { CategoriesNew } from "./CategoriesNew";
 import { CategoriesShow } from "./CategoriesShow";
-import { ExpensesIndex } from "./ExpensesIndex";
+// import { ExpensesIndex } from "./ExpensesIndex";
 import { ExpensesNew } from "./ExpensesNew";
 import { Modal } from "./Modal";
 
@@ -72,7 +72,6 @@ export function Content() {
       <CategoriesNew onCreateCategory={handleCreateCategory} />
       <CategoriesIndex categories={categories} onShowCategory={handleShowCategory} />
       <ExpensesNew onCreateExpense={handleCreateExpense} />
-      <ExpensesIndex expenses={expenses} />
       <Modal show={isCategoriesShowVisible} onClose={handleClose}>
         <CategoriesShow category={currentCategory} />
       </Modal>

@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { ExpensesNew } from "./ExpensesNew";
 export function ExpensesIndex(props) {
   return (
     <div>
@@ -6,9 +7,11 @@ export function ExpensesIndex(props) {
       {props.expenses.map((expense) => (
         <div key={expense.id}>
           <h2>{expense.name}</h2>
+          {expense.category_id}
           <p>Amount: {expense.amount}</p>
         </div>
       ))}
+      <ExpensesNew />
     </div>
   );
 }

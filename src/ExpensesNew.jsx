@@ -10,6 +10,9 @@ export function ExpensesNew(props) {
       <h1>New Expense</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
+          Category Id: <input className="form-control" name="category_id" type="text" />
+        </div>
+        <div className="mb-3">
           Name: <input className="form-control" name="name" type="text" />
         </div>
         <div className="mb-3">

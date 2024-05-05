@@ -5,7 +5,7 @@ export function CategoriesShow(props) {
       {props.category.expenses.map((expense) => (
         <div key={expense.id}>
           <h2>{expense.name}</h2>
-          <p>{expense.amount}</p>
+          <p>${expense.amount}</p>
         </div>
       ))}
     </div>

@@ -1,12 +1,14 @@
+// import { Link } from "react-router-dom";
+// import { LogoutLink } from "./LogoutLink";
+
 export function Header() {
   return (
     <header>
       <nav>
-        <a href="#">Home</a> | <a href="#">Link</a>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        {/* <nav className="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              Navbar
+              Monies
             </a>
             <button
               className="navbar-toggler"
@@ -22,29 +24,42 @@ export function Header() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <Link className="nav-link active" aria-current="page" to="/">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Features
-                  </a>
+                  <Link className="nav-link" to="/categories">
+                    Category
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Pricing
-                  </a>
+                  <Link className="nav-link" to="/expenses">
+                    Expenses
+                  </Link>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link disabled" aria-disabled="true">
-                    Disabled
-                  </a>
-                </li>
+                {localStorage.getItem("jwt") ? (
+                  <li className="nav-item">
+                    <LogoutLink />
+                  </li>
+                ) : (
+                  <>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/signup">
+                        Signup
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/login">
+                        Login
+                      </Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </div>
-        </nav>
+        </nav> */}
       </nav>
     </header>
   );
