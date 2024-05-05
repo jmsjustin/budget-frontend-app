@@ -2,9 +2,12 @@
 export function CategoriesShow(props) {
   return (
     <div>
-      <h1>Category Info</h1>
-      <p>Name: {props.category.name}</p>
-      <p>Recommended Percent: {props.category.recommended_percent}</p>
+      {props.category.expenses.map((expense) => (
+        <div key={expense.id}>
+          <h2>{expense.name}</h2>
+          <p>{expense.amount}</p>
+        </div>
+      ))}
     </div>
   );
 }
