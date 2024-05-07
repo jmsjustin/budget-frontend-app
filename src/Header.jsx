@@ -4,62 +4,48 @@
 export function Header() {
   return (
     <header>
-      <nav>
-        {/* <nav className="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="#">
-              Monies
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="/">
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/categories">
-                    Category
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/expenses">
-                    Expenses
-                  </Link>
-                </li>
-                {localStorage.getItem("jwt") ? (
-                  <li className="nav-item">
-                    <LogoutLink />
-                  </li>
-                ) : (
-                  <>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/signup">
-                        Signup
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/login">
-                        Login
-                      </Link>
-                    </li>
-                  </>
-                )}
-              </ul>
-            </div>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+            BuYS
+            <p className="navbar-brand-small">(BUdget Your Shit)</p>
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">
+                  Your Budget
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Signup
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Login
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link disabled" aria-disabled="true">
+                  Disabled
+                </a>
+              </li>
+            </ul>
           </div>
-        </nav> */}
+        </div>
       </nav>
     </header>
   );

@@ -1,9 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Pixelify+Sans:wght@400..700&display=swap");
+
 html {
   scroll-behavior: smooth;
+}
+
+#root {
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/ep_naturalwhite.png");
 }
 
 footer {
   background-color: grey;
   text-align: center;
   padding: 1em;
+}
+
+.navbar-brand {
+  font-family: Bruno Ace;
+  font-size: 4em !important;
+}
+
+.navbar-brand-small {
+  color: white;
+  font-size: .2em;  
+}
+
+.category-border {
+  border-bottom: dotted 2px black;
 }
