@@ -71,7 +71,7 @@ export function Content() {
       <LogoutLink />
       <CategoriesNew onCreateCategory={handleCreateCategory} />
       <CategoriesIndex categories={categories} onShowCategory={handleShowCategory} />
-      <ExpensesNew onCreateExpense={handleCreateExpense} />
+      {/* <ExpensesNew onCreateExpense={handleCreateExpense} /> */}
       <Modal show={isCategoriesShowVisible} onClose={handleClose}>
         <CategoriesShow category={currentCategory} />
       </Modal>

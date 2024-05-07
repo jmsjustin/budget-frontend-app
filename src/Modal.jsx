@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./Modal.css";
+import { ExpensesNew } from "./ExpensesNew";
 
 export function Modal(props) {
   if (props.show) {
@@ -10,6 +11,7 @@ export function Modal(props) {
           <button className="close" type="button" onClick={props.onClose}>
             &#x2715;
           </button>
+          <ExpensesNew />
         </section>
       </div>
     );
