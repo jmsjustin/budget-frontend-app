@@ -25,5 +25,9 @@ footer {
 }
 
 .category-border {
-  border-bottom: dotted 2px black;
+  border-bottom: dashed 2px black;
+}
+
+.expense-border {
+  border-bottom: dashed 1.5px black;
 }

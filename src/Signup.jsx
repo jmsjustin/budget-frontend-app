@@ -55,6 +55,9 @@ export function Signup() {
         <div className="mb-3">
           Password confirmation: <input className="form-control" name="password_confirmation" type="password" />
         </div>
+        <div className="mb-3">
+          Target Monthly Budget: <input className="form-control" name="monthly_budget" type="number" />
+        </div>
         <button className="btn btn-primary mb-3" type="submit">
           Signup
         </button>

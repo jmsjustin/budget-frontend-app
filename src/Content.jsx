@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
+import { Routes, Route } from "react-router-dom";
 import { LogoutLink } from "./LogoutLink";
 import { CategoriesIndex } from "./CategoriesIndex";
 import { CategoriesNew } from "./CategoriesNew";
@@ -66,6 +67,7 @@ export function Content() {
 
   return (
     <div className="container">
+      <Routes></Routes>
       <Signup />
       <Login />
       <LogoutLink />
