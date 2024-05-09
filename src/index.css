@@ -31,3 +31,8 @@ footer {
 .expense-border {
   border-bottom: dashed 1.5px black;
 }
+
+.expenses {
+  max-height: 200px;
+  overflow: scroll;
+}

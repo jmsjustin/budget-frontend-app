@@ -1,5 +1,5 @@
-// import { Link } from "react-router-dom";
-// import { LogoutLink } from "./LogoutLink";
+import { Link } from "react-router-dom";
+import { LogoutLink } from "./LogoutLink";
 
 export function Header() {
   return (
@@ -24,25 +24,28 @@ export function Header() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link active" aria-current="page" to="/categories">
                   Your Budget
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/signup">
                   Signup
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/login">
                   Login
-                </a>
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
-                  Disabled
-                </a>
-              </li>
+
+              {localStorage.getItem("jwt") ? (
+                <li className="nav-item">
+                  <LogoutLink />
+                </li>
+              ) : (
+                <></>
+              )}
             </ul>
           </div>
         </div>

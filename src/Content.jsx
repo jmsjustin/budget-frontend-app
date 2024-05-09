@@ -3,12 +3,11 @@ import { useState, useEffect } from "react";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { Routes, Route } from "react-router-dom";
-import { LogoutLink } from "./LogoutLink";
+// import { LogoutLink } from "./LogoutLink";
 import { CategoriesIndex } from "./CategoriesIndex";
 import { CategoriesNew } from "./CategoriesNew";
 import { CategoriesShow } from "./CategoriesShow";
 // import { ExpensesIndex } from "./ExpensesIndex";
-import { ExpensesNew } from "./ExpensesNew";
 import { Modal } from "./Modal";
 
 export function Content() {
@@ -67,15 +66,16 @@ export function Content() {
 
   return (
     <div className="container">
-      <Routes></Routes>
-      <Signup />
-      <Login />
-      <LogoutLink />
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      {/* <LogoutLink /> */}
       <CategoriesNew onCreateCategory={handleCreateCategory} />
       <CategoriesIndex categories={categories} onShowCategory={handleShowCategory} />
       {/* <ExpensesNew onCreateExpense={handleCreateExpense} /> */}
       <Modal show={isCategoriesShowVisible} onClose={handleClose}>
-        <CategoriesShow category={currentCategory} />
+        <CategoriesShow category={currentCategory} onCreateExpense={handleCreateExpense} />
       </Modal>
     </div>
   );
