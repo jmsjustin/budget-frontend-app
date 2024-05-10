@@ -71,9 +71,9 @@ export function Content() {
         <Route path="/login" element={<Login />} />
       </Routes>
       {/* <LogoutLink /> */}
-      <CategoriesNew onCreateCategory={handleCreateCategory} />
       <CategoriesIndex categories={categories} onShowCategory={handleShowCategory} />
       {/* <ExpensesNew onCreateExpense={handleCreateExpense} /> */}
+      <CategoriesNew onCreateCategory={handleCreateCategory} />
       <Modal show={isCategoriesShowVisible} onClose={handleClose}>
         <CategoriesShow category={currentCategory} onCreateExpense={handleCreateExpense} />
       </Modal>

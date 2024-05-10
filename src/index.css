@@ -25,14 +25,23 @@ footer {
 }
 
 .category-border {
-  border-bottom: dashed 2px black;
+  border: outset 1.5px rgb(169, 174, 174);
+  border-radius: 7px;
+  padding: .5em;
+  margin: 5px;
+  margin-bottom: 8px;
 }
 
 .expense-border {
-  border-bottom: dashed 1.5px black;
+  border: solid 1px rgb(236, 236, 236);
+  border-radius: 7px;
+  padding: .5em;
+  padding-bottom: 1px;
+  margin: 5px;
+  background-color: rgb(243, 242, 242);
 }
 
 .expenses {
-  max-height: 200px;
+  max-height: 800px;
   overflow: scroll;
 }

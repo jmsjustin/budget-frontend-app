@@ -6,7 +6,7 @@ export function CategoriesShow(props) {
   const state = {
     series: [
       {
-        name: "Desktops",
+        name: "Spending",
         data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
       },
     ],
@@ -42,8 +42,6 @@ export function CategoriesShow(props) {
 
   return (
     <div>
-      <ExpensesNew category={props.category} onCreateExpense={props.onCreateExpense} />
-      <ReactApexChart options={state.options} series={state.series} type="line" height={350} />
       <div className="expenses">
         {props.category.expenses.map((expense) => (
           <div key={expense.id} className="expense-border">
@@ -51,6 +49,8 @@ export function CategoriesShow(props) {
             <p>${expense.amount}</p>
           </div>
         ))}
+        <ReactApexChart options={state.options} series={state.series} type="line" height={250} />
+        <ExpensesNew category={props.category} onCreateExpense={props.onCreateExpense} />
       </div>
     </div>
   );
