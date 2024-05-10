@@ -42,6 +42,8 @@ export function CategoriesShow(props) {
 
   return (
     <div>
+      <h3>{props.category.name}</h3>
+      <p>{props.category.description}</p>
       <div className="expenses">
         {props.category.expenses.map((expense) => (
           <div key={expense.id} className="expense-border">

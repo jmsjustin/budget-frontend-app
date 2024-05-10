@@ -24,12 +24,17 @@ footer {
   font-size: .2em;  
 }
 
+/* .navbar {
+  margin-bottom: 1em;
+} */
+
 .category-border {
-  border: outset 1.5px rgb(169, 174, 174);
+  border: solid 1px rgb(236, 236, 236);
   border-radius: 7px;
   padding: .5em;
   margin: 5px;
   margin-bottom: 8px;
+  background-color: rgb(243, 242, 242);
 }
 
 .expense-border {
@@ -42,6 +47,10 @@ footer {
 }
 
 .expenses {
-  max-height: 800px;
-  overflow: scroll;
+  max-height: 725px;
+  overflow-y: scroll;
+}
+
+.pie-chart {
+  margin-top: 1em;
 }

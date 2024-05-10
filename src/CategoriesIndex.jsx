@@ -46,8 +46,9 @@ export function CategoriesIndex(props) {
   };
   return (
     <div>
-      <ReactApexChart options={state.options} series={state.series} type="donut" width={380} />
-
+      <div className="pie-chart">
+        <ReactApexChart options={state.options} series={state.series} type="donut" width={380} />
+      </div>
       <h1>All Categories</h1>
       {props.categories.map((category) => (
         <div key={category.id} className="category-border">
