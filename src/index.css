@@ -83,3 +83,7 @@ footer {
   background-color: #85bb65;
   border: #85bb65;
 }
+
+.expense-update {
+  overflow-y: scroll;
+}
