@@ -16,7 +16,7 @@ export function CategoriesNew(props) {
         <div className="mb-3">
           Recommended Percent: <input className="form-control" name="recommended_percent" type="text" />
         </div>
-        <button className="btn btn-success mb-3" type="submit">
+        <button id="category-button" className="btn btn-success mb-3" type="submit">
           Create Category
         </button>
       </form>

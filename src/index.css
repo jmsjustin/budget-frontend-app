@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Pixelify+Sans:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -6,10 +7,12 @@ html {
 
 #root {
   background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/ep_naturalwhite.png");
+  font-family: "Montserrat";
 }
 
 footer {
-  background-color: grey;
+  background-color: #2B3035;
+  color: white;
   text-align: center;
   padding: 1em;
 }
@@ -29,21 +32,27 @@ footer {
 } */
 
 .category-border {
-  border: solid 1px rgb(236, 236, 236);
+  /* border: solid 1px rgb(236, 236, 236); */
   border-radius: 7px;
   padding: .5em;
   margin: 5px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   background-color: rgb(243, 242, 242);
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .expense-border {
-  border: solid 1px rgb(236, 236, 236);
+  /* border: solid 1px rgb(236, 236, 236); */
   border-radius: 7px;
   padding: .5em;
   padding-bottom: 1px;
   margin: 5px;
+  margin-bottom: 10px;
   background-color: rgb(243, 242, 242);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .expenses {
@@ -53,4 +62,24 @@ footer {
 
 .pie-chart {
   margin-top: 1em;
+}
+
+.hovered {
+  background-color: #85bb65;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  transform: scale(1.04);
+}
+
+.category-border h2 {
+  color: black; 
+  transition: color 0.2.5s ease;
+}
+
+.category-border.hovered h2 {
+  color: white;
+}
+
+#category-button {
+  background-color: #85bb65;
+  border: #85bb65;
 }

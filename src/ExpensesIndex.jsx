@@ -9,6 +9,7 @@ export function ExpensesIndex(props) {
           <h2>{expense.name}</h2>
           {expense.category_id}
           <p>Amount: {expense.amount}</p>
+          <button onClick={() => props.onShowExpense(expense)}>More info</button>
         </div>
       ))}
       <ExpensesNew />

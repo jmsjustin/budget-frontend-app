@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import { CategoriesIndex } from "./CategoriesIndex";
 import { CategoriesNew } from "./CategoriesNew";
 import { CategoriesShow } from "./CategoriesShow";
+// import { ExpensesShow } from "./ExpensesShow";
 // import { ExpensesIndex } from "./ExpensesIndex";
 import { Modal } from "./Modal";
 
@@ -14,6 +15,8 @@ export function Content() {
   const [categories, setCategories] = useState([]);
   const [isCategoriesShowVisible, setIsCategoriesShowVisible] = useState(false);
   const [currentCategory, setCurrentCategory] = useState({});
+  // const [isExpensesShowVisible, setIsExpensesShowVisible] = useState(false);
+  // const [currentExpense, setCurrentExpense] = useState({});
 
   const [expenses, setExpenses] = useState([]);
 
@@ -60,7 +63,19 @@ export function Content() {
   const handleClose = () => {
     console.log("handleClose");
     setIsCategoriesShowVisible(false);
+    // setIsExpensesShowVisible(false);
   };
+
+  // const handleShowExpense = (expense) => {
+  //   console.log("handleShowExpense", expense);
+  //   setIsExpensesShowVisible(true);
+  //   setCurrentExpense(expense);
+  // };
+
+  // const handleClose = () => {
+  //   console.log("handleClose");
+  //   setIsExpensesShowVisible(false);
+  // };
 
   useEffect(handleIndexCategories, []);
 
@@ -76,6 +91,7 @@ export function Content() {
       <CategoriesNew onCreateCategory={handleCreateCategory} />
       <Modal show={isCategoriesShowVisible} onClose={handleClose}>
         <CategoriesShow category={currentCategory} onCreateExpense={handleCreateExpense} />
+        {/* <ExpensesShow expense={currentExpense} /> */}
       </Modal>
     </div>
   );
