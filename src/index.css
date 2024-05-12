@@ -87,3 +87,7 @@ footer {
 .expense-update {
   overflow-y: scroll;
 }
+
+#expense-delete {
+  float: right;
+}

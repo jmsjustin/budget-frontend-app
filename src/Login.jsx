@@ -19,6 +19,8 @@ export function Login() {
         console.log(response.data);
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
+        localStorage.setItem("monthly_budget", response.data.monthly_budget);
+
         event.target.reset();
         localStorage.setItem("flashMessage", "Logged in successfully!");
         window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.

@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import axios from "axios";
 import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
@@ -11,6 +12,23 @@ export function CategoriesIndex(props) {
 
   const handleMouseLeave = () => {
     setHoveredCategory(null);
+  };
+
+  const handleUpdateIncome = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    console.log("handleUpdateIncome", params);
+    axios.patch(`http://localhost:3000/users/1.json`, params).then((response) => {
+      console.log(response);
+      localStorage.setItem("monthly_budget", response.data.monthly_budget);
+      window.location.href = "/";
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    props.onCreateIncome(updateIncomeId, params, () => (window.location.href = "/"));
   };
 
   const state = {
@@ -63,6 +81,13 @@ export function CategoriesIndex(props) {
         <ReactApexChart options={state.options} series={state.series} type="donut" width={380} />
       </div>
       <h1>Planned Budget</h1>
+      <form onSubmit={handleUpdateIncome}>
+        Monthly Income
+        <input name="monthly_budget" className="form-control" type="text" defaultValue={localStorage.monthly_budget} />
+        <button className="btn btn-info mt-2 mb-2" type="submit">
+          Submit
+        </button>
+      </form>
       {props.categories.map((category) => (
         <div
           key={category.id}

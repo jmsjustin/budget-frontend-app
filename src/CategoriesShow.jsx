@@ -1,8 +1,49 @@
 /* eslint-disable react/prop-types */
 import ReactApexChart from "react-apexcharts";
 import { ExpensesNew } from "./ExpensesNew";
+import { useState } from "react";
+import axios from "axios";
 
 export function CategoriesShow(props) {
+  const [updateExpenseId, setUpdateExpenseId] = useState(null);
+  const [hoveredCategory, setHoveredCategory] = useState(null);
+
+  const handleMouseEnter = (category) => {
+    setHoveredCategory(category);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCategory(null);
+  };
+
+  const handleUpdateExpense = (id, params, successCallback) => {
+    console.log("handleUpdateAmount", params);
+    axios.patch(`http://localhost:3000/expenses/${id}.json`, params).then((response) => {
+      console.log(response);
+      successCallback();
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = new FormData(event.target);
+    // props.onUpdateExpense(props.expense.id, params, () => event.target.reset());
+    handleUpdateExpense(updateExpenseId, params, () => (window.location.href = "/"));
+  };
+
+  const handleDestroyExpense = (id) => {
+    console.log("handleDestroyExpense", id);
+    axios.delete(`http://localhost:3000/expenses/${id}.json`).then((response) => {
+      // setExpenses(expenses.filter((expense) => expense.id !== id));
+      // handleClose();
+      window.location.href = "/";
+    });
+  };
+
+  const handleCLick = () => {
+    props.onDestroyExpense(props.expense.id);
+  };
+
   const state = {
     series: [
       {
@@ -46,11 +87,44 @@ export function CategoriesShow(props) {
       <p>{props.category.description}</p>
       <div className="expenses">
         {props.category.expenses.map((expense) => (
-          <div key={expense.id} className="expense-border">
+          <div
+            key={expense.id}
+            className={`category-border ${hoveredCategory === expense ? "hovered" : ""}`}
+            onMouseEnter={() => handleMouseEnter(expense)}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => setUpdateExpenseId(expense.id)}
+          >
             <h2>{expense.name}</h2>
-            <p>${expense.amount}</p>
+            {expense.id === updateExpenseId ? (
+              <div>
+                <div>
+                  <form>
+                    <div className="mb-3">
+                      Amount:{" "}
+                      <input className="form-control" defaultValue={expense.amount} name="amount" type="number"></input>
+                    </div>
+
+                    <button onClick={() => handleUpdateExpense} className="btn btn-light mb-3" type="submit">
+                      Update!
+                    </button>
+                    <button
+                      onClick={() => handleDestroyExpense(expense.id)}
+                      id="expense-delete"
+                      className="btn btn-danger mb-3"
+                    >
+                      Delete
+                    </button>
+                  </form>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <p>${expense.amount}</p>
+              </div>
+            )}
           </div>
         ))}
+
         <ReactApexChart options={state.options} series={state.series} type="line" height={250} />
         <ExpensesNew category={props.category} onCreateExpense={props.onCreateExpense} />
       </div>

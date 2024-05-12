@@ -3,7 +3,7 @@ export function ExpensesNew(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    props.onCreateExpense(params, () => event.target.reset());
+    props.onCreateExpense(params, () => event.target.reset((window.location.href = "/")));
   };
   return (
     <div>
