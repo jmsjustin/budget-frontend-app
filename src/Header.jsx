@@ -8,7 +8,7 @@ export function Header() {
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             BuYS
-            <p className="navbar-brand-small">(BUdget Your Shit)</p>
+            <p className="navbar-brand-small">(BUdget Your Spending)</p>
           </a>
           <button
             className="navbar-toggler"

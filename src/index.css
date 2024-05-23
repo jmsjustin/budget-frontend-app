@@ -67,7 +67,13 @@ footer {
 .hovered {
   background-color: #85bb65;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-  transform: scale(1.04);
+  transform: scale(1.02);
+}
+
+.hovered-expense {
+  background-color: #85bb65;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  transform: scale(1.018);
 }
 
 .category-border h2 {

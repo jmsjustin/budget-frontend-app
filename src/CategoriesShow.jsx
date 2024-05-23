@@ -89,7 +89,7 @@ export function CategoriesShow(props) {
         {props.category.expenses.map((expense) => (
           <div
             key={expense.id}
-            className={`category-border ${hoveredCategory === expense ? "hovered" : ""}`}
+            className={`category-border ${hoveredCategory === expense ? "hovered-expense" : ""}`}
             onMouseEnter={() => handleMouseEnter(expense)}
             onMouseLeave={handleMouseLeave}
             onClick={() => setUpdateExpenseId(expense.id)}
