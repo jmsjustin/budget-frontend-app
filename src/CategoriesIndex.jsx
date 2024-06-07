@@ -18,7 +18,7 @@ export function CategoriesIndex(props) {
     event.preventDefault();
     const params = new FormData(event.target);
     console.log("handleUpdateIncome", params);
-    axios.patch(`http://localhost:3000/users/1.json`, params).then((response) => {
+    axios.patch(`/users/1.json`, params).then((response) => {
       console.log(response);
       localStorage.setItem("monthly_budget", response.data.monthly_budget);
       window.location.href = "/";

@@ -22,7 +22,7 @@ export function Content() {
 
   const handleIndexExpenses = () => {
     console.log("handleIndexExpenses");
-    axios.get("http://localhost:3000/expenses.json").then((response) => {
+    axios.get("/expenses.json").then((response) => {
       console.log(response.data);
       setExpenses(response.data);
     });
@@ -30,7 +30,7 @@ export function Content() {
 
   const handleCreateExpense = (params, successCallback) => {
     console.log("handleCreateExpense", params);
-    axios.post("http://localhost:3000/expenses.json", params).then((response) => {
+    axios.post("/expenses.json", params).then((response) => {
       setExpenses([...expenses, response.data]);
       successCallback();
     });
@@ -40,7 +40,7 @@ export function Content() {
 
   const handleIndexCategories = () => {
     console.log("handleIndexCategories");
-    axios.get("http://localhost:3000/categories.json").then((response) => {
+    axios.get("/categories.json").then((response) => {
       console.log(response.data);
       setCategories(response.data);
     });
@@ -48,7 +48,7 @@ export function Content() {
 
   const handleCreateCategory = (params, successCallback) => {
     console.log("handleCreateCategory", params);
-    axios.post("http://localhost:3000/categories.json", params).then((response) => {
+    axios.post("/categories.json", params).then((response) => {
       setCategories([...categories, response.data]);
       successCallback();
     });

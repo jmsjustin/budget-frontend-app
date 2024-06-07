@@ -18,7 +18,7 @@ export function CategoriesShow(props) {
 
   const handleUpdateExpense = (id, params, successCallback) => {
     console.log("handleUpdateAmount", params);
-    axios.patch(`http://localhost:3000/expenses/${id}.json`, params).then((response) => {
+    axios.patch(`/expenses/${id}.json`, params).then((response) => {
       console.log(response);
       successCallback();
     });
@@ -33,7 +33,7 @@ export function CategoriesShow(props) {
 
   const handleDestroyExpense = (id) => {
     console.log("handleDestroyExpense", id);
-    axios.delete(`http://localhost:3000/expenses/${id}.json`).then((response) => {
+    axios.delete(`/expenses/${id}.json`).then((response) => {
       // setExpenses(expenses.filter((expense) => expense.id !== id));
       // handleClose();
       window.location.href = "/";
