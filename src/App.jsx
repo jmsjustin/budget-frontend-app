@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 axios.defaults.baseURL =
-  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "<budget-api-l9hm.onrender.com>";
+  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "<https://budget-api-l9hm.onrender.com>";
 
 function App() {
   const [flashMessage, setFlashMessage] = useState("");
